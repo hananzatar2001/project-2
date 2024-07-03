@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -14,36 +15,29 @@ html {
     box-sizing: inherit;
 }
 
+/* Header Styles */
 header {
     background: #333;
     color: #fff;
-    padding: 5px 0;
-    text-align: center;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 1000;
     transition: top 0.3s;
 }
 
-header .navmenu {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
 header h1 {
-    margin-right: auto;
-    padding-left: 20px;
+    margin: 0;
+    font-size: 1.5em;
 }
 
 header .nav-links {
     display: flex;
     gap: 20px;
-    margin-right: 20px;
 }
 
 header .nav-links ul {
@@ -71,7 +65,9 @@ header .nav-links a.active {
     color: blue;
 }
 
+/* Hero Section */
 .hero {
+    background: #3A01CB;
     color: white;
     height: 30vh;
     display: flex;
@@ -82,15 +78,15 @@ header .nav-links a.active {
 }
 
 .hero h2 {
-    font-size: 2.5em;
-    background: #3A01CB;
+    font-size: 2em;
     padding: 20px;
     border-radius: 5px;
 }
 
+/* Main Layout */
 .wrapper {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 1fr 3fr;
     gap: 20px;
     max-width: 1200px;
     margin: 20px auto;
@@ -110,7 +106,7 @@ aside ul {
 
 aside ul li {
     background: #ddd;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
@@ -148,6 +144,7 @@ section.collapsed > *:not(h3) {
     display: none;
 }
 
+/* About Section */
 .about-section {
     padding: 50px;
     text-align: center;
@@ -155,6 +152,7 @@ section.collapsed > *:not(h3) {
     color: white;
 }
 
+/* Team Section */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -209,8 +207,10 @@ section.collapsed > *:not(h3) {
     background-color: #555;
 }
 
+/* Contact Section */
 .contact-section {
     margin-top: 50px;
+    padding: 20px;
 }
 
 .contact-section form {
@@ -244,43 +244,15 @@ section.collapsed > *:not(h3) {
     background-color: #3A01CB;
 }
 
-@media screen and (max-width: 650px) {
-    .wrapper {
-        grid-template-columns: 1fr;
-    }
-    .column {
-        width: 100%;
-        display: block;
-    }
-    header {
-        flex-direction: column;
-    }
-    header h1 {
-        padding-left: 0;
-    }
-    header .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-    header .nav-links ul {
-        flex-direction: column;
-    }
-    .hero h2 {
-        font-size: 1.5em;
-    }
-    .nav-links a {
-        padding: 5px;
-    }
-}
-
+/* Footer */
 footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     position: sticky;
-    width: 100%;
     bottom: 0;
+    width: 100%;
 }
 
 footer .nav_menu h4 {
@@ -298,4 +270,103 @@ footer .nav_menu h4 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: auto;
+        padding: 20px;
+    }
+
+    header .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header .nav-links ul {
+        flex-direction: column;
+    }
+
+    header .nav-links li {
+        margin-right: 0;
+    }
+
+    .about-section, .contact-section {
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .column {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header .nav-links a {
+        padding: 5px;
+    }
+
+    .hero h2 {
+        font-size: 1.5em;
+    }
+
+    .about-section, .contact-section {
+        padding: 10px;
+    }
+
+    .card {
+        margin: 0;
+    }
+
+    .button {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .hero h2 {
+        font-size: 1.2em;
+    }
+
+    header {
+        padding: 5px 10px;
+    }
+
+    header h1 {
+        font-size: 1em;
+    }
+
+    .about-section, .contact-section {
+        padding: 5px;
+    }
+
+    .card {
+        margin: 4px;
+    }
+
+    .button {
+        padding: 4px;
+    }
+
+    .wrapper {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    .hero {
+        padding: 10px;
+    }
 }
